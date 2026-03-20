@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brindawan Motors — Premium Pre-Owned Cars</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --dark: #0D0D0D;
+    --dark2: #161616;
+    --dark3: #1E1E1E;
+    --white: #F5F0E8;
+    --gray: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(13,13,13,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+
+  .logo span { color: var(--white); font-weight: 400; }
+
+  nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+  }
+
+  nav ul a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  nav ul a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--dark) !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    font-weight: 600 !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light); color: var(--dark) !important; }
+
+  /* ---- HERO ---- */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 5%;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.05) 0%, transparent 60%),
+      linear-gradient(135deg, #0D0D0D 0%, #161616 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    color: #AAA;
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.2s ease both;
+    font-weight: 300;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 15px 35px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 15px 35px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-stats {
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    display: flex;
+    gap: 50px;
+    z-index: 2;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  /* ---- MARQUEE ---- */
+  .marquee-section {
+    background: var(--gold);
+    padding: 14px 0;
+    overflow: hidden;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 60px;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-track span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dark);
+    flex-shrink: 0;
+  }
+
+  .marquee-dot { color: var(--dark); opacity: 0.4; }
+
+  /* ---- SECTION COMMON ---- */
+  section { padding: 100px 5%; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    color: var(--gray);
+    font-weight: 300;
+    font-size: 1rem;
+    max-width: 500px;
+    line-height: 1.8;
+  }
+
+  /* ---- INVENTORY ---- */
+  #inventory { background: var(--dark2); }
+
+  .inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .filter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-tab {
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--gray);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter-tab.active, .filter-tab:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .car-card {
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+
+  .car-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .car-img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    background: var(--dark);
+    transition: transform 0.5s ease;
+  }
+
+  .car-card:hover .car-img { transform: scale(1.04); }
+
+  .car-img-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .car-img-placeholder {
+    width: 100%;
+    height: 210px;
+    background: linear-gradient(135deg, #1a1a1a, #252525);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+
+  /* ---- SPECS TABLE ---- */
+  .specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+  .specs-table tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .specs-table td {
+    padding: 6px 4px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .specs-table td:first-child {
+    color: var(--gray);
+    width: 42%;
+    font-weight: 500;
+  }
+  .specs-table td:last-child { color: var(--white); }
+
+  /* ---- MODAL ---- */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(6px);
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal-box {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.2);
+    max-width: 820px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: fadeUp 0.3s ease;
+  }
+
+  .modal-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .modal-body { padding: 32px; }
+
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    width: 38px; height: 38px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+    z-index: 10;
+  }
+  .modal-close:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+
+  .modal-brand { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .modal-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 20px; }
+
+  .modal-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .modal-spec-group h4 {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .features-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 16px;
+  }
+  .features-list li {
+    font-size: 0.82rem;
+    color: #ccc;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .features-list li::before { content: '✦'; color: var(--gold); font-size: 0.6rem; margin-top: 3px; flex-shrink: 0; }
+
+  .car-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+  }
+
+  .car-info {
+    padding: 24px;
+  }
+
+  .car-brand {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .car-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .car-specs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .spec {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--gray);
+  }
+
+  .spec-icon { font-size: 0.9rem; }
+
+  .car-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .car-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .car-price small {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.65rem;
+    color: var(--gray);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .card-btn {
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    padding: 8px 18px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .card-btn:hover {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  /* ---- WHY US ---- */
+  #why { background: var(--dark); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .why-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .feature-card {
+    padding: 28px;
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-left: 3px solid var(--gold);
+    transition: all 0.3s;
+  }
+
+  .feature-card:hover {
+    background: rgba(201,168,76,0.05);
+    transform: translateX(4px);
+  }
+
+  .feature-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .feature-desc {
+    font-size: 0.82rem;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  .why-visual {
+    position: relative;
+  }
+
+  .why-img-box {
+    background: linear-gradient(135deg, var(--dark3), var(--dark2));
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-img-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 60%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .why-big-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(201,168,76,0.12);
+    line-height: 1;
+    display: block;
+  }
+
+  .why-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-top: -20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- BRANDS ---- */
+  #brands { background: var(--dark2); }
+
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .brand-box {
+    background: var(--dark3);
+    padding: 35px 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .brand-box:hover {
+    background: rgba(201,168,76,0.08);
+    border-color: rgba(201,168,76,0.2);
+  }
+
+  .brand-logo { font-size: 2.2rem; margin-bottom: 10px; display: block; }
+
+  .brand-name {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: 500;
+  }
+
+  /* ---- CONTACT ---- */
+  #contact { background: var(--dark); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 14px 18px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border 0.3s;
+    resize: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group select option { background: var(--dark3); }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .info-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 35px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .info-item:last-child { border-bottom: none; }
+
+  .info-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .info-label {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .info-value {
+    font-size: 0.95rem;
+    color: var(--white);
+    line-height: 1.7;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: #080808;
+    padding: 60px 5% 30px;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+
+  .footer-brand p {
+    color: var(--gray);
+    font-size: 0.88rem;
+    line-height: 1.8;
+    margin-top: 16px;
+    font-weight: 300;
+  }
+
+  .footer-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-col ul a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+  }
+
+  .footer-col ul a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom p { color: var(--gray); font-size: 0.8rem; }
+
+  .social-links { display: flex; gap: 14px; }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  .social-link:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.1);
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .hero-stats { position: static; margin-top: 50px; justify-content: flex-start; }
+    .hero { flex-direction: column; padding-top: 120px; padding-bottom: 60px; }
+    .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .why-features { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Brindawan <span>Motors</span></div>
+  <ul>
+    <li><a href="#inventory">Inventory</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#brands">Brands</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <span class="hero-badge">🏆 Nepal's Trusted Dealer</span>
+    <h1>Drive Your <em>Dream</em><br>Without Compromise</h1>
+    <p>Premium pre-owned vehicles, carefully inspected and certified. From compact hatchbacks to powerful SUVs — we have the right car for every journey.</p>
+    <div class="hero-buttons">
+      <a href="#inventory" class="btn-primary">Browse Inventory</a>
+      <a href="#contact" class="btn-outline">Book Test Drive</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">200+</span>
+      <span class="stat-label">Cars Sold</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">8+</span>
+      <span class="stat-label">Years Active</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">15+</span>
+      <span class="stat-label">Car Brands</span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span>Mahindra Scorpio</span><span class="marquee-dot">◆</span>
+    <span>Ford EcoSport</span><span class="marquee-dot">◆</span>
+    <span>Maruti Suzuki Brezza</span><span class="marquee-dot">◆</span>
+    <span>Ford Freestyle</span><span class="marquee-dot">◆</span>
+    <span>Renault Kwid</span><span class="marquee-dot">◆</span>
+    <span>Ford Figo</span><span class="marquee-dot">◆</span>
+    <span>Hyundai Creta</span><span class="marquee-dot">◆</span>
+    <span>Toyota Fortuner</span><span class="marquee-dot">◆</span>
+    <!-- repeat for seamless loop -->
+    <span>Mahindra Scorpio</span><span class="marquee-dot">◆</span>
+    <span>Ford EcoSport</span><span class="marquee-dot">◆</span>
+    <span>Maruti Suzuki Brezza</span><span class="marquee-dot">◆</span>
+    <span>Ford Freestyle</span><span class="marquee-dot">◆</span>
+    <span>Renault Kwid</span><span class="marquee-dot">◆</span>
+    <span>Ford Figo</span><span class="marquee-dot">◆</span>
+    <span>Hyundai Creta</span><span class="marquee-dot">◆</span>
+    <span>Toyota Fortuner</span><span class="marquee-dot">◆</span>
+  </div>
+</div>
+
+<!-- INVENTORY -->
+<section id="inventory">
+  <div class="inventory-header">
+    <div>
+      <span class="section-label">Our Fleet</span>
+      <h2 class="section-title">Featured Vehicles</h2>
+      <p class="section-sub">All cars are thoroughly inspected, documented, and ready for road.</p>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active">All</button>
+      <button class="filter-tab">SUV</button>
+      <button class="filter-tab">Hatchback</button>
+      <button class="filter-tab">Sedan</button>
+    </div>
+  </div>
+
+  <div class="cars-grid">
+
+    <!-- Car 1: Hyundai Creta S -->
+    <div class="car-card" onclick="openModal('creta-s')">
+      <div class="car-img-wrap">
+        <img class="car-img" src="https://i.ibb.co/k2W25v1D/Screenshot-20260320-202141-Maps.jpg" alt="Hyundai Creta S" loading="lazy">
+        <span class="car-badge">Available</span>
+      </div>
+      <div class="car-info">
+        <div class="car-brand">Hyundai</div>
+        <div class="car-name">Creta S</div>
+        <div class="car-specs">
+          <span class="spec"><span class="spec-icon">⛽</span> Diesel</span>
+          <span class="spec"><span class="spec-icon">⚙️</span> Manual</span>
+          <span class="spec"><span class="spec-icon">🛋️</span> 5 Seater</span>
+        </div>
+        <table class="specs-table">
+          <tr><td>Engine</td><td>1.5L U2 CRDi</td></tr>
+          <tr><td>Power</td><td>116 PS @ 4000 rpm</td></tr>
+          <tr><td>Torque</td><td>250 Nm @ 1500–2750 rpm</td></tr>
+          <tr><td>Displacement</td><td>1493 cc</td></tr>
+        </table>
+        <div class="car-footer">
+          <div class="car-price">NRs 30L <small>Negotiable</small></div>
+          <button class="card-btn" onclick="event.stopPropagation(); openModal('creta-s')">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 2: Hyundai Creta SX -->
+    <div class="car-card" onclick="openModal('creta-sx')">
+      <div class="car-img-wrap">
+        <img class="car-img" src="https://i.ibb.co/jPTvWkC5/Screenshot-20260320-202121-Maps.jpg" alt="Hyundai Creta SX" loading="lazy">
+        <span class="car-badge" style="background:#E74C3C;">Hot Deal</span>
+      </div>
+      <div class="car-info">
+        <div class="car-brand">Hyundai</div>
+        <div class="car-name">Creta SX</div>
+        <div class="car-specs">
+          <span class="spec"><span class="spec-icon">⛽</span> Petrol/Diesel</span>
+          <span class="spec"><span class="spec-icon">⚙️</span> Manual/Auto</span>
+          <span class="spec"><span class="spec-icon">🛋️</span> 5 Seater</span>
+        </div>
+        <table class="specs-table">
+          <tr><td>Engine Options</td><td>1.6L Petrol / 1.6L Diesel</td></tr>
+          <tr><td>Power</td><td>Up to 128 hp</td></tr>
+          <tr><td>Ground Clearance</td><td>190 mm</td></tr>
+          <tr><td>Wheelbase</td><td>2590 mm</td></tr>
+        </table>
+        <div class="car-footer">
+          <div class="car-price">NRs 32L <small>Negotiable</small></div>
+          <button class="card-btn" onclick="event.stopPropagation(); openModal('creta-sx')">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 3: Mahindra Scorpio -->
+    <div class="car-card" onclick="openModal('scorpio')">
+      <div class="car-img-wrap">
+        <img class="car-img" src="https://i.ibb.co/TBKNTcDX/Screenshot-20260320-202218-Maps.jpg" alt="Mahindra Scorpio" loading="lazy">
+        <span class="car-badge">Available</span>
+      </div>
+      <div class="car-info">
+        <div class="car-brand">Mahindra</div>
+        <div class="car-name">Scorpio Classic</div>
+        <div class="car-specs">
+          <span class="spec"><span class="spec-icon">⛽</span> Diesel</span>
+          <span class="spec"><span class="spec-icon">⚙️</span> Manual</span>
+          <span class="spec"><span class="spec-icon">🛋️</span> 7–9 Seater</span>
+        </div>
+        <table class="specs-table">
+          <tr><td>Engine</td><td>2.2L mHawk Diesel</td></tr>
+          <tr><td>Power</td><td>~120 bhp</td></tr>
+          <tr><td>Torque</td><td>280 Nm</td></tr>
+          <tr><td>Drive</td><td>RWD / 4WD</td></tr>
+        </table>
+        <div class="car-footer">
+          <div class="car-price">NRs 28L <small>Negotiable</small></div>
+          <button class="card-btn" onclick="event.stopPropagation(); openModal('scorpio')">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 4: Ford EcoSport -->
+    <div class="car-card" onclick="openModal('ecosport')">
+      <div class="car-img-wrap">
+        <img class="car-img" src="https://i.ibb.co/MxHn0bYv/Screenshot-20260320-202223-Maps.jpg" alt="Ford EcoSport" loading="lazy">
+        <span class="car-badge">Available</span>
+      </div>
+      <div class="car-info">
+        <div class="car-brand">Ford</div>
+        <div class="car-name">EcoSport Facelift</div>
+        <div class="car-specs">
+          <span class="spec"><span class="spec-icon">⛽</span> Petrol/Diesel</span>
+          <span class="spec"><span class="spec-icon">⚙️</span> Manual/Auto</span>
+          <span class="spec"><span class="spec-icon">🛋️</span> 5 Seater</span>
+        </div>
+        <table class="specs-table">
+          <tr><td>Engine</td><td>1.5L Ti-VCT / TDCi</td></tr>
+          <tr><td>Petrol Power</td><td>~123 bhp</td></tr>
+          <tr><td>Diesel Torque</td><td>215 Nm</td></tr>
+          <tr><td>Drive</td><td>FWD</td></tr>
+        </table>
+        <div class="car-footer">
+          <div class="car-price">NRs 22L <small>Negotiable</small></div>
+          <button class="card-btn" onclick="event.stopPropagation(); openModal('ecosport')">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 5: Maruti Suzuki Vitara Brezza -->
+    <div class="car-card" onclick="openModal('brezza')">
+      <div class="car-img-wrap">
+        <img class="car-img" src="https://i.ibb.co/gZ7P4HdP/Screenshot-20260320-202228-Maps.jpg" alt="Maruti Suzuki Vitara Brezza" loading="lazy">
+        <span class="car-badge">Available</span>
+      </div>
+      <div class="car-info">
+        <div class="car-brand">Maruti Suzuki</div>
+        <div class="car-name">Vitara Brezza</div>
+        <div class="car-specs">
+          <span class="spec"><span class="spec-icon">⛽</span> Petrol</span>
+          <span class="spec"><span class="spec-icon">⚙️</span> Manual/Auto</span>
+          <span class="spec"><span class="spec-icon">🛋️</span> 5 Seater</span>
+        </div>
+        <table class="specs-table">
+          <tr><td>Engine</td><td>1.5L K15B Petrol</td></tr>
+          <tr><td>Power</td><td>~105 bhp</td></tr>
+          <tr><td>Torque</td><td>138 Nm</td></tr>
+          <tr><td>Body Type</td><td>Compact SUV</td></tr>
+        </table>
+        <div class="car-footer">
+          <div class="car-price">NRs 25L <small>Negotiable</small></div>
+          <button class="card-btn" onclick="event.stopPropagation(); openModal('brezza')">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 6: Ford Freestyle -->
+    <div class="car-card" onclick="openModal('freestyle')">
+      <div class="car-img-wrap">
+        <img class="car-img" src="https://i.ibb.co/677wyJjp/Screenshot-20260320-202232-Maps.jpg" alt="Ford Freestyle" loading="lazy">
+        <span class="car-badge">Available</span>
+      </div>
+      <div class="car-info">
+        <div class="car-brand">Ford</div>
+        <div class="car-name">Freestyle Cross</div>
+        <div class="car-specs">
+          <span class="spec"><span class="spec-icon">⛽</span> Petrol/Diesel</span>
+          <span class="spec"><span class="spec-icon">⚙️</span> Manual</span>
+          <span class="spec"><span class="spec-icon">🛋️</span> 5 Seater</span>
+        </div>
+        <table class="specs-table">
+          <tr><td>Engine</td><td>1.2L Ti-VCT / 1.5L TDCi</td></tr>
+          <tr><td>Power</td><td>~96 bhp (petrol)</td></tr>
+          <tr><td>Torque</td><td>120 Nm (petrol)</td></tr>
+          <tr><td>Type</td><td>Crossover Hatchback</td></tr>
+        </table>
+        <div class="car-footer">
+          <div class="car-price">NRs 18L <small>Negotiable</small></div>
+          <button class="card-btn" onclick="event.stopPropagation(); openModal('freestyle')">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 7: Renault Kwid -->
+    <div class="car-card" onclick="openModal('kwid')">
+      <div class="car-img-wrap">
+        <img class="car-img" src="https://i.ibb.co/CKsCH13j/Screenshot-20260320-202241-Maps.jpg" alt="Renault Kwid" loading="lazy">
+        <span class="car-badge">Available</span>
+      </div>
+      <div class="car-info">
+        <div class="car-brand">Renault</div>
+        <div class="car-name">Kwid Facelift</div>
+        <div class="car-specs">
+          <span class="spec"><span class="spec-icon">⛽</span> Petrol</span>
+          <span class="spec"><span class="spec-icon">⚙️</span> Manual/AMT</span>
+          <span class="spec"><span class="spec-icon">🛋️</span> 5 Seater</span>
+        </div>
+        <table class="specs-table">
+          <tr><td>Engine</td><td>0.8L / 1.0L SCe Petrol</td></tr>
+          <tr><td>Power</td><td>Up to 68 bhp</td></tr>
+          <tr><td>Torque</td><td>91 Nm</td></tr>
+          <tr><td>Mileage</td><td>~22 kmpl</td></tr>
+        </table>
+        <div class="car-footer">
+          <div class="car-price">NRs 12L <small>Negotiable</small></div>
+          <button class="card-btn" onclick="event.stopPropagation(); openModal('kwid')">View Details</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== MODALS ===== -->
+
+<!-- Hyundai Creta S Modal -->
+<div class="modal-overlay" id="modal-creta-s" onclick="closeModal(event, 'creta-s')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalBtn('creta-s')">✕</button>
+    <img class="modal-img" src="https://i.ibb.co/k2W25v1D/Screenshot-20260320-202141-Maps.jpg" alt="Hyundai Creta S">
+    <div class="modal-body">
+      <div class="modal-brand">Hyundai · SUV</div>
+      <div class="modal-title">Creta S — 1.5L U2 CRDi Diesel</div>
+      <div class="modal-specs-grid">
+        <div class="modal-spec-group">
+          <h4>Engine & Performance</h4>
+          <table class="specs-table">
+            <tr><td>Engine Type</td><td>1.5 U2 CRDi</td></tr>
+            <tr><td>Fuel System</td><td>Common Rail Direct Injection</td></tr>
+            <tr><td>Displacement</td><td>1493 cc</td></tr>
+            <tr><td>Max Power</td><td>116 PS @ 4000 rpm</td></tr>
+            <tr><td>Max Torque</td><td>250 Nm @ 1500–2750 rpm</td></tr>
+            <tr><td>Configuration</td><td>4 Cylinders, 16 Valves</td></tr>
+            <tr><td>Valvetrain</td><td>DOHC</td></tr>
+          </table>
+        </div>
+        <div class="modal-spec-group">
+          <h4>Transmission & Chassis</h4>
+          <table class="specs-table">
+            <tr><td>Gearbox</td><td>6-speed Manual / Automatic</td></tr>
+            <tr><td>Front Suspension</td><td>McPherson Strut + Coil Spring</td></tr>
+            <tr><td>Rear Suspension</td><td>Couple Torsion Beam + Coil Spring</td></tr>
+            <tr><td>Shock Absorber</td><td>Gas Type</td></tr>
+            <tr><td>Front Brake</td><td>Disc</td></tr>
+            <tr><td>Rear Brake</td><td>Disc</td></tr>
+            <tr><td>Fuel Tank</td><td>50 L</td></tr>
+          </table>
+        </div>
+      </div>
+      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#contact" class="btn-primary" onclick="closeModalBtn('creta-s')" style="font-size:0.8rem; padding:12px 28px;">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hyundai Creta SX Modal -->
+<div class="modal-overlay" id="modal-creta-sx" onclick="closeModal(event, 'creta-sx')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalBtn('creta-sx')">✕</button>
+    <img class="modal-img" src="https://i.ibb.co/jPTvWkC5/Screenshot-20260320-202121-Maps.jpg" alt="Hyundai Creta SX">
+    <div class="modal-body">
+      <div class="modal-brand">Hyundai · SUV</div>
+      <div class="modal-title">Creta SX</div>
+      <div class="modal-specs-grid">
+        <div class="modal-spec-group">
+          <h4>Engine Options</h4>
+          <table class="specs-table">
+            <tr><td>1.6L Petrol</td><td>~121 hp | Manual/Auto</td></tr>
+            <tr><td>1.4L Diesel</td><td>~90 hp | Manual</td></tr>
+            <tr><td>1.6L Diesel</td><td>~128 hp | Manual/Auto</td></tr>
+            <tr><td>Petrol Mileage</td><td>~15 kmpl</td></tr>
+            <tr><td>Diesel Mileage</td><td>17–21 kmpl</td></tr>
+          </table>
+          <h4 style="margin-top:16px;">Dimensions</h4>
+          <table class="specs-table">
+            <tr><td>Length</td><td>4270 mm</td></tr>
+            <tr><td>Width</td><td>1780 mm</td></tr>
+            <tr><td>Wheelbase</td><td>2590 mm</td></tr>
+            <tr><td>Ground Clearance</td><td>190 mm</td></tr>
+            <tr><td>Doors / Seats</td><td>5 Doors / 5 Seats</td></tr>
+          </table>
+        </div>
+        <div class="modal-spec-group">
+          <h4>Features</h4>
+          <ul class="features-list">
+            <li>7-inch Touchscreen with Android Auto & Apple CarPlay</li>
+            <li>Panoramic Sunroof</li>
+            <li>Push-button Start/Stop</li>
+            <li>Auto Climate Control</li>
+            <li>Electric Folding Mirrors</li>
+            <li>Rear AC Vents</li>
+            <li>Multi-function Steering Wheel</li>
+          </ul>
+          <h4 style="margin-top:16px;">Safety</h4>
+          <ul class="features-list">
+            <li>6 Airbags</li>
+            <li>ABS with EBD</li>
+            <li>Electronic Stability Control</li>
+            <li>Hill Start Assist</li>
+            <li>Rear Parking Sensors</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="#contact" class="btn-primary" onclick="closeModalBtn('creta-sx')" style="font-size:0.8rem; padding:12px 28px;">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mahindra Scorpio Modal -->
+<div class="modal-overlay" id="modal-scorpio" onclick="closeModal(event, 'scorpio')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalBtn('scorpio')">✕</button>
+    <img class="modal-img" src="https://i.ibb.co/TBKNTcDX/Screenshot-20260320-202218-Maps.jpg" alt="Mahindra Scorpio">
+    <div class="modal-body">
+      <div class="modal-brand">Mahindra · SUV / MUV</div>
+      <div class="modal-title">Scorpio Classic / S Series</div>
+      <div class="modal-specs-grid">
+        <div class="modal-spec-group">
+          <h4>Engine & Performance</h4>
+          <table class="specs-table">
+            <tr><td>Engine</td><td>2.2L mHawk Diesel</td></tr>
+            <tr><td>Power</td><td>~120 bhp</td></tr>
+            <tr><td>Torque</td><td>~280 Nm</td></tr>
+            <tr><td>Transmission</td><td>5-speed Manual / Automatic</td></tr>
+            <tr><td>Drive</td><td>RWD / 4WD (variant dependent)</td></tr>
+            <tr><td>Fuel Type</td><td>Diesel</td></tr>
+          </table>
+        </div>
+        <div class="modal-spec-group">
+          <h4>Overview</h4>
+          <table class="specs-table">
+            <tr><td>Body Type</td><td>SUV / MUV</td></tr>
+            <tr><td>Seating</td><td>7–9 Seater</td></tr>
+            <tr><td>Roof Rails</td><td>Yes</td></tr>
+            <tr><td>Hood Scoop</td><td>Yes</td></tr>
+            <tr><td>Tinted Windows</td><td>Yes</td></tr>
+            <tr><td>Side Steps</td><td>Yes</td></tr>
+          </table>
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="#contact" class="btn-primary" onclick="closeModalBtn('scorpio')" style="font-size:0.8rem; padding:12px 28px;">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ford EcoSport Modal -->
+<div class="modal-overlay" id="modal-ecosport" onclick="closeModal(event, 'ecosport')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalBtn('ecosport')">✕</button>
+    <img class="modal-img" src="https://i.ibb.co/MxHn0bYv/Screenshot-20260320-202223-Maps.jpg" alt="Ford EcoSport">
+    <div class="modal-body">
+      <div class="modal-brand">Ford · Compact SUV</div>
+      <div class="modal-title">EcoSport Facelift</div>
+      <div class="modal-specs-grid">
+        <div class="modal-spec-group">
+          <h4>Engine Options</h4>
+          <table class="specs-table">
+            <tr><td>Petrol Engine</td><td>1.5L Ti-VCT</td></tr>
+            <tr><td>Diesel Engine</td><td>1.5L TDCi</td></tr>
+            <tr><td>Petrol Power</td><td>~123 bhp</td></tr>
+            <tr><td>Diesel Power</td><td>~100 bhp</td></tr>
+            <tr><td>Diesel Torque</td><td>~215 Nm</td></tr>
+            <tr><td>Transmission</td><td>5/6-speed Manual / Automatic</td></tr>
+          </table>
+        </div>
+        <div class="modal-spec-group">
+          <h4>Overview</h4>
+          <table class="specs-table">
+            <tr><td>Body Type</td><td>Compact SUV</td></tr>
+            <tr><td>Seating</td><td>5 Seater</td></tr>
+            <tr><td>Drive</td><td>FWD</td></tr>
+            <tr><td>Fuel Types</td><td>Petrol / Diesel</td></tr>
+            <tr><td>Variant</td><td>Post-2017 Facelift</td></tr>
+            <tr><td>Wheels</td><td>Steel (Ambiente/Trend)</td></tr>
+          </table>
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="#contact" class="btn-primary" onclick="closeModalBtn('ecosport')" style="font-size:0.8rem; padding:12px 28px;">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Maruti Brezza Modal -->
+<div class="modal-overlay" id="modal-brezza" onclick="closeModal(event, 'brezza')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalBtn('brezza')">✕</button>
+    <img class="modal-img" src="https://i.ibb.co/gZ7P4HdP/Screenshot-20260320-202228-Maps.jpg" alt="Maruti Suzuki Vitara Brezza">
+    <div class="modal-body">
+      <div class="modal-brand">Maruti Suzuki · Compact SUV</div>
+      <div class="modal-title">Vitara Brezza (Facelift)</div>
+      <div class="modal-specs-grid">
+        <div class="modal-spec-group">
+          <h4>Engine & Performance</h4>
+          <table class="specs-table">
+            <tr><td>Engine</td><td>1.5L K15B Petrol</td></tr>
+            <tr><td>Power</td><td>~105 bhp</td></tr>
+            <tr><td>Torque</td><td>138 Nm</td></tr>
+            <tr><td>Transmission</td><td>5-speed Manual / 4-speed Auto</td></tr>
+            <tr><td>Fuel</td><td>Petrol</td></tr>
+            <tr><td>Mileage</td><td>~17–19 kmpl</td></tr>
+          </table>
+        </div>
+        <div class="modal-spec-group">
+          <h4>Overview</h4>
+          <table class="specs-table">
+            <tr><td>Body Type</td><td>Compact SUV</td></tr>
+            <tr><td>Seating</td><td>5 Seater</td></tr>
+            <tr><td>Color</td><td>Silky Silver</td></tr>
+            <tr><td>Generation</td><td>Facelift</td></tr>
+            <tr><td>Roof Rails</td><td>Yes</td></tr>
+          </table>
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="#contact" class="btn-primary" onclick="closeModalBtn('brezza')" style="font-size:0.8rem; padding:12px 28px;">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ford Freestyle Modal -->
+<div class="modal-overlay" id="modal-freestyle" onclick="closeModal(event, 'freestyle')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalBtn('freestyle')">✕</button>
+    <img class="modal-img" src="https://i.ibb.co/677wyJjp/Screenshot-20260320-202232-Maps.jpg" alt="Ford Freestyle">
+    <div class="modal-body">
+      <div class="modal-brand">Ford · Crossover Hatchback</div>
+      <div class="modal-title">Freestyle Cross</div>
+      <div class="modal-specs-grid">
+        <div class="modal-spec-group">
+          <h4>Engine Options</h4>
+          <table class="specs-table">
+            <tr><td>Petrol Engine</td><td>1.2L Ti-VCT</td></tr>
+            <tr><td>Diesel Engine</td><td>1.5L TDCi</td></tr>
+            <tr><td>Petrol Power</td><td>~96 bhp</td></tr>
+            <tr><td>Petrol Torque</td><td>120 Nm</td></tr>
+            <tr><td>Transmission</td><td>5-speed Manual</td></tr>
+            <tr><td>Fuel</td><td>Petrol / Diesel</td></tr>
+          </table>
+        </div>
+        <div class="modal-spec-group">
+          <h4>Overview</h4>
+          <table class="specs-table">
+            <tr><td>Body Type</td><td>Crossover Hatchback</td></tr>
+            <tr><td>Seating</td><td>5 Seater</td></tr>
+            <tr><td>Color</td><td>Canyon Ridge (Copper)</td></tr>
+            <tr><td>Drive</td><td>FWD</td></tr>
+          </table>
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="#contact" class="btn-primary" onclick="closeModalBtn('freestyle')" style="font-size:0.8rem; padding:12px 28px;">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Renault Kwid Modal -->
+<div class="modal-overlay" id="modal-kwid" onclick="closeModal(event, 'kwid')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalBtn('kwid')">✕</button>
+    <img class="modal-img" src="https://i.ibb.co/CKsCH13j/Screenshot-20260320-202241-Maps.jpg" alt="Renault Kwid">
+    <div class="modal-body">
+      <div class="modal-brand">Renault · Hatchback</div>
+      <div class="modal-title">Kwid Facelift</div>
+      <div class="modal-specs-grid">
+        <div class="modal-spec-group">
+          <h4>Engine & Performance</h4>
+          <table class="specs-table">
+            <tr><td>Engine Options</td><td>0.8L / 1.0L SCe Petrol</td></tr>
+            <tr><td>Max Power</td><td>Up to 68 bhp</td></tr>
+            <tr><td>Max Torque</td><td>91 Nm</td></tr>
+            <tr><td>Transmission</td><td>5-speed Manual / AMT</td></tr>
+            <tr><td>Fuel</td><td>Petrol</td></tr>
+            <tr><td>Mileage</td><td>~22 kmpl</td></tr>
+          </table>
+        </div>
+        <div class="modal-spec-group">
+          <h4>Overview</h4>
+          <table class="specs-table">
+            <tr><td>Body Type</td><td>Hatchback</td></tr>
+            <tr><td>Seating</td><td>5 Seater</td></tr>
+            <tr><td>Color</td><td>Teal / Aquamarine Blue</td></tr>
+            <tr><td>Generation</td><td>Facelift</td></tr>
+            <tr><td>Registration</td><td>Pradesh 3-01, Nepal</td></tr>
+          </table>
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="#contact" class="btn-primary" onclick="closeModalBtn('kwid')" style="font-size:0.8rem; padding:12px 28px;">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-grid">
+    <div>
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title">More Than Just<br>a Car Dealership</h2>
+      <p class="section-sub">We've been helping families and businesses find their perfect vehicles across Nepal for years, with honesty and care at every step.</p>
+      <div class="why-features">
+        <div class="feature-card">
+          <span class="feature-icon">🔍</span>
+          <div class="feature-title">100% Inspected</div>
+          <p class="feature-desc">Every vehicle passes our 50-point quality check before listing.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📄</span>
+          <div class="feature-title">Clear Documents</div>
+          <p class="feature-desc">Full ownership history and legal papers verified and ready.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">💳</span>
+          <div class="feature-title">Easy Finance</div>
+          <p class="feature-desc">Flexible loan options with partner banks and low EMIs.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔧</span>
+          <div class="feature-title">After Support</div>
+          <p class="feature-desc">Service support and warranty available on select vehicles.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="why-img-box">
+        <span class="why-big-num">10+</span>
+        <div class="why-tagline">"Your Trust,<br>Our Business"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section id="brands">
+  <div style="text-align:center; margin-bottom: 10px;">
+    <span class="section-label">Our Portfolio</span>
+    <h2 class="section-title">Brands We Deal In</h2>
+  </div>
+  <div class="brands-grid">
+    <div class="brand-box"><span class="brand-logo">🔵</span><div class="brand-name">Ford</div></div>
+    <div class="brand-box"><span class="brand-logo">🟡</span><div class="brand-name">Mahindra</div></div>
+    <div class="brand-box"><span class="brand-logo">🔷</span><div class="brand-name">Maruti Suzuki</div></div>
+    <div class="brand-box"><span class="brand-logo">🟠</span><div class="brand-name">Renault</div></div>
+    <div class="brand-box"><span class="brand-logo">🔴</span><div class="brand-name">Toyota</div></div>
+    <div class="brand-box"><span class="brand-logo">⬜</span><div class="brand-name">Hyundai</div></div>
+    <div class="brand-box"><span class="brand-logo">🔵</span><div class="brand-name">Honda</div></div>
+    <div class="brand-box"><span class="brand-logo">🟢</span><div class="brand-name">Tata</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div style="margin-bottom: 60px;">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title">Visit or Call Us Today</h2>
+    <p class="section-sub">Interested in a vehicle? Fill out the form and our team will get back to you within 24 hours.</p>
+  </div>
+  <div class="contact-grid">
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+977 98XXXXXXXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Interested In</label>
+        <select>
+          <option value="">Select a vehicle...</option>
+          <option>Mahindra Scorpio</option>
+          <option>Ford EcoSport</option>
+          <option>Maruti Vitara Brezza</option>
+          <option>Ford Freestyle</option>
+          <option>Renault Kwid</option>
+          <option>Ford Figo</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="4" placeholder="Tell us about your requirements..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%; text-align:center;">Send Enquiry →</button>
+    </form>
+
+    <div class="contact-info">
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Showroom Address</div>
+          <div class="info-value">Brindawan Motors,<br>Main Road, Nepal</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div>
+          <div class="info-label">Phone / WhatsApp</div>
+          <div class="info-value">+977 98XXXXXXXX<br>+977 98XXXXXXXX</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🕐</div>
+        <div>
+          <div class="info-label">Working Hours</div>
+          <div class="info-value">Sunday – Friday: 9AM – 6PM<br>Saturday: 10AM – 4PM</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📧</div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8de4e3ebe2cdefffe4e3e9ecfaece3e0e2f9e2fffea3eee2e0a3e3fd">[email&#160;protected]</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Brindawan <span>Motors</span></div>
+      <p>Your trusted partner for premium pre-owned vehicles in Nepal. Quality cars, fair prices, honest service.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#inventory">Inventory</a></li>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Car Types</h4>
+      <ul>
+        <li><a href="#">SUVs</a></li>
+        <li><a href="#">Hatchbacks</a></li>
+        <li><a href="#">Sedans</a></li>
+        <li><a href="#">Crossovers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Test Drive</a></li>
+        <li><a href="#">Car Finance</a></li>
+        <li><a href="#">Insurance</a></li>
+        <li><a href="#">Sell Your Car</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Brindawan Motors. All rights reserved.</p>
+    <div class="social-links">
+      <a class="social-link" href="#">📘</a>
+      <a class="social-link" href="#">📸</a>
+      <a class="social-link" href="#">💬</a>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Modal functions
+  function openModal(id) {
+    document.getElementById('modal-' + id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModalBtn(id) {
+    document.getElementById('modal-' + id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeModal(e, id) {
+    if (e.target === document.getElementById('modal-' + id)) {
+      closeModalBtn(id);
+    }
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => {
+        m.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
+  // Filter tabs
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✅ Enquiry Sent!';
+    btn.style.background = '#2d7a4f';
+    setTimeout(() => {
+      btn.textContent = 'Send Enquiry →';
+      btn.style.background = '';
+    }, 3000);
+  }
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = '
